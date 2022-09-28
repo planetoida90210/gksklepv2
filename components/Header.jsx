@@ -20,10 +20,10 @@ const Header = () => {
     </Link>
     </div>
     <div className="hidden flex-1 items-center justify-center space-x-8 md:flex">
-      <a className="headerLink">Produkty</a>
-      <a className="headerLink">Nowości</a>
-      <a className="headerLink">Wkrótce</a>
-      <a className="headerLink">Free Graffiti</a>
+      <Link href="/" className="headerLink">Produkty</Link>
+      <Link href="/art" className="headerLink">Art</Link>
+      <Link href="/sale" className="headerLink">Promocje</Link>
+      <Link href="/free-graffiti" className="headerLink">Free Graffiti</Link>
     </div>
     <div className="flex items-center justify-center gap-x-4 md:w-1/5">
       <div className="flex items-center ml-3">
