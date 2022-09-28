@@ -1,3 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@base {
+  body{
+    @apply font-body
+  }
+}
+
+@layer components {
+  .headerLink {
+    @apply cursor-pointer opacity-75 transition hover:opacity-100 text-xl;
+  }
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  transform: scale(1.5);
+}
+
+.ball {
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s linear;
+}
+
+/* target the element after the label */
+.checkbox:checked + .label .ball {
+  transform: translateX(16px);
+}
+
+.fa-moon {
+  color: lightgray;
+  font-size: 9px;
+}
+
+.fa-sun {
+  color: yellow;
+  font-size: 9px;
+}
+
+.flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
