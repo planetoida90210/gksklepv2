@@ -1,8 +1,11 @@
 import React from 'react'
 
+
 const Art = () => {
   return (
-    <div>Art</div>
+    <div>
+      art
+    </div>
   )
 }
 

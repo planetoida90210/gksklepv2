@@ -1,29 +1,93 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import React,{ useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 
 // external imports
 import images from '../assets/app'
 
+const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
+  const generateLink = (i) => {
+    switch (i) {
+      case 0: return '/';
+      case 1: return 'art';
+      case 2: return 'sale'
+      case 3: return 'free-graffiti'
+    }
+  }
+
+  return (
+    <ul className="flex gap-10 text-xl justify-center items-center list-none flex-row ">
+      {['Produkty', 'Art', 'Promocje', 'Free Graffiti'].map((item,i) =>(
+        <li
+         key={i}
+         onClick={() => {
+          setActive(item);
+          if (isMobile) setIsOpen(false);
+         }}
+         className={`${active === item ? 'underline decoration-[#F7AB0A]/50 underline-offset-8' : 'text-white' }`}
+        >
+          <Link href={generateLink(i)}>{item}</Link>
+        </li>
+      ))
+
+      }
+    </ul>
+  )
+
+}
+
+const checkActive = (active, setActive, router) => {
+    switch (router.pathname) {
+        case '/':
+            if (active !== 'Produkty') setActive('Produkty');
+            break;
+        case '/art':
+            if (active !== 'Art') setActive('Art');
+            break;
+        case '/sale':
+            if (active !== 'Promocje') setActive('Promocje');
+            break;
+        case '/free-graffiti':
+            if (active !== 'Free Graffiti') setActive('Free Graffiti');
+            break;
+        default:
+            setActive('');
+    }
+}
+
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
+  const [ active, setActive ] = useState('Produkty');
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    checkActive(active, setActive, router)
+  }, [router.pathname]);
 
   return (
     <header className="sticky top-0 z-30 flex w-full items-center justify-between p-4 dark:bg-[#0f0f12] bg-[#E7ECEE]">
     <div className="flex items-center justify-center md:w-1/5">
       <Link href="/">
-      <div className="relative h-[90px] w-[90px] cursor-pointer opacity-80 transition hover:opacity-100">
+      <div 
+       className="relative h-[90px] w-[90px] cursor-pointer opacity-80 transition hover:opacity-100"
+       onClick={() => {
+        setActive('Produkty')
+       }}
+       >
         <Image src={images.logo} className={theme === 'light' ? 'filter invert' : ''} layout="fill" objectFit="contain" alt="logo"/>
       </div>
     </Link>
     </div>
     <div className="hidden flex-1 items-center justify-center space-x-8 md:flex">
-      <Link href="/" className="headerLink">Produkty</Link>
+      <MenuItems active={active} setActive={setActive}/>
+      {/* <Link href="/" className="headerLink">Produkty</Link>
       <Link href="/art" className="headerLink">Art</Link>
       <Link href="/sale" className="headerLink">Promocje</Link>
-      <Link href="/free-graffiti" className="headerLink">Free Graffiti</Link>
+      <Link href="/free-graffiti" className="headerLink">Free Graffiti</Link> */}
     </div>
     <div className="flex items-center justify-center gap-x-4 md:w-1/5">
       <div className="flex items-center ml-3">

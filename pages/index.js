@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Header } from '../components'
+
 
 const Home = () => {
   return (
@@ -9,7 +9,6 @@ const Home = () => {
         <title>Galeria Koloru</title>
         <link rel="icon" href="/favivon.ico" />
       </Head>
-      <Header />
     </div>
   )
 }
