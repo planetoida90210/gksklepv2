@@ -12,6 +12,9 @@ const Home = () => {
     <main className="relative h-[200vh] dark:bg-[#0f0f12] bg-[#E7ECEE]">
       <HomePage />
     </main>
+    <section className="relative snap-center z-40 -mt-[100vh] min-h-screen dark:bg-[#24252D] bg-white">
+      produkty
+    </section>
     </div>
   )
 }
