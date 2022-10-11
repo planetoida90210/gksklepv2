@@ -1,17 +1,23 @@
 import React from 'react'
 import Head from 'next/head'
-import { Header } from '../components'
+import { FreeGraffitiPage } from '../components'
 
-const freeGraffiti = () => {
+
+const Art = () => {
   return (
     <div>
-    <Head>
-    <title>Galeria Koloru</title>
-    <link rel="icon" href="/favivon.ico" />
-  </Head>
-  free graffiti
-</div>
+      <Head>
+        <title>Galeria Koloru</title>
+        <link rel="icon" href="/favivon.ico" />
+      </Head>
+    <main className="relative h-[200vh] dark:bg-[#0f0f12] bg-[#E7ECEE]">
+      <FreeGraffitiPage />
+    </main>
+    <section className="relative snap-center z-40 -mt-[100vh] min-h-screen dark:bg-[#24252D] bg-white">
+      produkty
+    </section>
+    </div>
   )
 }
 
-export default freeGraffiti
+export default Art
