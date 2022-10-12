@@ -1,6 +1,7 @@
 import React from 'react'
 import { Tab } from '@headlessui/react'
 
+
 const CategoryTabs = ({categories}) => {
   return (
     <Tab.Group>

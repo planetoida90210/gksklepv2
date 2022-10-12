@@ -3,14 +3,13 @@
 import { groq } from "next-sanity";
 import { sanityClient } from "../../sanity";
 
-const query = groq`*[_type == "categoryProduct"]{
+const query = groq`*[_type == "categoryArt"]{
     _id,
      ...
   }`;
 
 
 export default async function handler(req, res) {
-    const productCategories = await sanityClient.fetch(query);
-    res.status(200).json({productCategories});
+    const artCategories = await sanityClient.fetch(query);
+    res.status(200).json({artCategories});
   }
-  
