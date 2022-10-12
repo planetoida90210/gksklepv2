@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .checkbox {
   opacity: 0;
   position: absolute;

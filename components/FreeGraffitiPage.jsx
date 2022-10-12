@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { Button } from '.'
+import  Link  from 'next/link'
 
 // external imports
 import images from '../assets/app'
@@ -15,7 +16,9 @@ const FreeGraffitiPage = () => {
           <span className="block">Legale</span>
         </h1>
         <div className="space-x-8">
-          <Button />
+           <Link href="#graffiti">
+            <Button title="Znajdź ściankę"/>
+           </Link>   
         </div>
       </div>
       <div className="relative hidden h-[450px] w-[450px] transition-all duration-500 md:inline lg:h-[600px] lg:w-[600px]">

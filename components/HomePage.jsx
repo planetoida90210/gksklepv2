@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { Button } from '.'
 
@@ -15,7 +16,9 @@ const HomePage = () => {
           <span className="block">Fineart Store</span>
         </h1>
         <div className="space-x-8">
-          <Button />
+          <Link href="#products">
+           <Button title="Produkty"/>
+          </Link>
         </div>
       </div>
       <div className="relative hidden h-[450px] w-[450px] transition-all duration-500 md:inline lg:h-[600px] lg:w-[600px]">
