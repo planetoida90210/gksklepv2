@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { HomePage } from '../components';
+import { HomePage, CategoryTabs } from '../components';
 
 const Home = () => {
   return (
@@ -17,6 +17,7 @@ const Home = () => {
         <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
           Produkty
         </h1>
+        <CategoryTabs />
       </div>
     </section>
     </div>
