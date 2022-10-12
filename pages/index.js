@@ -4,7 +4,7 @@ import { HomePage, CategoryTabs } from '../components';
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Head>
         <title>Galeria Koloru</title>
         <link rel="icon" href="/favivon.ico" />
@@ -24,3 +24,11 @@ const Home = () => {
   )
 }
 export default Home
+
+// Backend code
+export const getServerSideProps = async () => {
+  // const categories = await fetchProductCategories() 
+  return {
+    props: {}
+  }
+}

@@ -84,10 +84,6 @@ const Header = () => {
     </div>
     <div className="hidden flex-1 items-center justify-center space-x-8 md:flex">
       <MenuItems active={active} setActive={setActive}/>
-      {/* <Link href="/" className="headerLink">Produkty</Link>
-      <Link href="/art" className="headerLink">Art</Link>
-      <Link href="/sale" className="headerLink">Promocje</Link>
-      <Link href="/free-graffiti" className="headerLink">Free Graffiti</Link> */}
     </div>
     <div className="flex items-center justify-center gap-x-4 md:w-1/5">
       <div className="flex items-center ml-3">
