@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { ArtPage } from '../components'
+import { ArtPage, CategoryTabs } from '../components'
 
 
 const Art = () => {
@@ -18,6 +18,7 @@ const Art = () => {
           <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
             Art
           </h1>
+          <CategoryTabs />
         </div>
     </section>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { SalePage } from '../components'
+import { SalePage, CategoryTabs } from '../components'
 
 
 const Sale = () => {
@@ -18,6 +18,7 @@ const Sale = () => {
           <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
             Promocje
           </h1>
+          <CategoryTabs />
        </div>
     </section>
     </div>
