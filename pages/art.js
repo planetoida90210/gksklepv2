@@ -14,7 +14,11 @@ const Art = () => {
       <ArtPage />
     </main>
     <section className="relative snap-center z-40 -mt-[100vh] min-h-screen dark:bg-[#24252D] bg-white">
-      produkty
+         <div className="space-y-10 py-16">
+          <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
+            Art
+          </h1>
+        </div>
     </section>
     </div>
   )
