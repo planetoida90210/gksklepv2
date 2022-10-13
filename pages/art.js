@@ -2,10 +2,11 @@ import React from 'react'
 import Head from 'next/head'
 import { ArtPage, CategoryTabs } from '../components'
 import { fetchArtCategories } from '../utils/fetchArtCategories'
+import { fetchArtProducts } from '../utils/fetchArtProducts'
 
 
 
-const Art = ({categories}) => {
+const Art = ({categories,products}) => {
 
 
   return (
@@ -22,7 +23,7 @@ const Art = ({categories}) => {
           <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
             Art
           </h1>
-          <CategoryTabs categories={categories}/>
+          <CategoryTabs categories={categories} products={products}/>
         </div>
     </section>
     </div>
@@ -32,10 +33,12 @@ const Art = ({categories}) => {
 export default Art
 
 export const getServerSideProps = async () => {
-  const categories = await fetchArtCategories() 
+  const categories = await fetchArtCategories();
+  const products = await fetchArtProducts();
   return {
     props: {
-      categories
+      categories,
+      products
     }
   }
 }

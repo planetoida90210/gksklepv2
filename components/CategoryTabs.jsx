@@ -4,9 +4,9 @@ import { Product } from '../components'
 
 const CategoryTabs = ({categories, products}) => {
 
-  const showProducts = (category) => {
+  let showProducts = (category) => {
     return products
-    .filter((product) => product.category._ref === categories[category]._id)
+    .filter((product) => product.category._ref === categories[category]?._id)
     .map((product) =>(<Product product={product} key={product._id}/> )) //filter products by category
   };
 

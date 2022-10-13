@@ -14,7 +14,7 @@ const Home = ({categories, products}) => {
     <main className="relative h-[200vh] dark:bg-[#0f0f12] bg-[#E7ECEE]">
       <HomePage />
     </main>
-    <section id="products" className="relative snap-center z-40 -mt-[100vh] min-h-screen dark:bg-[#24252D] bg-white">
+    <section id="products" className="relative snap-center z-40 -mt-[100vh] min-h-screen dark:bg-[#24252D] bg-[#f4f4f4]">
       <div className="space-y-10 py-16">
         <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
           Produkty
