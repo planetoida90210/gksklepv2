@@ -9,6 +9,7 @@ import blockContent from './blockContent'
 import categoryProduct from './categoryProduct'
 import categoryArt from './categoryArt'
 import categorySale from './categorySale'
+import categoryGraffiti from './categoryGraffiti'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,6 +22,7 @@ export default createSchema({
     categoryProduct,
     categoryArt,
     categorySale,
+    categoryGraffiti,
     blockContent
     /* Your types here! */
   ]),
