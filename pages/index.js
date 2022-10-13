@@ -2,9 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import { HomePage, CategoryTabs } from '../components';
 import { fetchProductCategories } from '../utils/fetchProductCategories';
+import { fetchProducts } from '../utils/fetchProducts';
 
-const Home = ({categories}) => {
-
+const Home = ({categories, products}) => {
   return (
     <div className="">
       <Head>
@@ -19,7 +19,7 @@ const Home = ({categories}) => {
         <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
           Produkty
         </h1>
-        <CategoryTabs categories={categories} />
+        <CategoryTabs categories={categories} products={products} />
       </div>
     </section>
     </div>
@@ -29,10 +29,12 @@ export default Home
 
 // Backend code
 export const getServerSideProps = async () => {
-  const categories = await fetchProductCategories() 
+  const categories = await fetchProductCategories();
+  const products = await fetchProducts();
   return {
     props: {
-      categories
+      categories,
+      products
     }
   }
 }
