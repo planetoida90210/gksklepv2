@@ -1,9 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
 import { SalePage, CategoryTabs } from '../components'
+import { fetchSaleCategories } from '../utils/fetchSaleCategories'
 
 
-const Sale = () => {
+const Sale = ({categories}) => {
   return (
     <div>
       <Head>
@@ -18,7 +19,7 @@ const Sale = () => {
           <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
             Promocje
           </h1>
-          {/* <CategoryTabs /> */}
+          <CategoryTabs categories={categories} />
        </div>
     </section>
     </div>
@@ -26,3 +27,12 @@ const Sale = () => {
 }
 
 export default Sale
+
+export const getServerSideProps = async () => {
+  const categories = await fetchSaleCategories() 
+  return {
+    props: {
+      categories
+    }
+  }
+}
