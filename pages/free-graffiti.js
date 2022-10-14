@@ -2,9 +2,10 @@ import React from 'react'
 import Head from 'next/head'
 import { FreeGraffitiPage, CategoryTabs } from '../components'
 import { fetchGraffitiCategories } from '../utils/fetchGraffitiCategories'
+import { fetchGraffitiProducts } from '../utils/fetchGraffitiProducts'
 
 
-const Art = ({categories}) => {
+const Art = ({categories, products}) => {
   return (
     <div>
       <Head>
@@ -19,7 +20,7 @@ const Art = ({categories}) => {
           <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
             Free Graffiti
           </h1>
-          <CategoryTabs categories={categories}/>
+          <CategoryTabs categories={categories} products={products}/>
         </div>
     </section>
     </div>
@@ -29,10 +30,12 @@ const Art = ({categories}) => {
 export default Art
 
 export const getServerSideProps = async () => {
-  const categories = await fetchGraffitiCategories() 
+  const categories = await fetchGraffitiCategories();
+  const products = await fetchGraffitiProducts();
   return {
     props: {
-      categories
+      categories,
+      products
     }
   }
 }

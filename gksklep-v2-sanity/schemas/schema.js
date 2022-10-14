@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import product from './product'
 import art from './art'
 import sale from './sale'
+import graffiti from './graffiti'
 import blockContent from './blockContent'
 import categoryProduct from './categoryProduct'
 import categoryArt from './categoryArt'
@@ -23,6 +24,7 @@ export default createSchema({
     product,
     art,
     sale,
+    graffiti,
     categoryProduct,
     categoryArt,
     categorySale,
