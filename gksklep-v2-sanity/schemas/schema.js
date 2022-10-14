@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import product from './product'
 import art from './art'
+import sale from './sale'
 import blockContent from './blockContent'
 import categoryProduct from './categoryProduct'
 import categoryArt from './categoryArt'
@@ -21,6 +22,7 @@ export default createSchema({
   types: schemaTypes.concat([
     product,
     art,
+    sale,
     categoryProduct,
     categoryArt,
     categorySale,
