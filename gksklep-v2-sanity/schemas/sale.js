@@ -41,6 +41,18 @@ export default {
       type: "number",
     },
     {
+     title: 'colors',
+     name: 'colors',
+     type: 'array',
+     of: [
+        {
+            title: 'color',
+            name: 'color',
+            type: 'string'
+        }
+     ]
+    },
+    {
       name: "description",
       title: "Opis",
       type: "blockContent",
