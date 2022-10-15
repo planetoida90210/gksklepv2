@@ -11,9 +11,9 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
   const generateLink = (i) => {
     switch (i) {
       case 0: return '/';
-      case 1: return 'art';
-      case 2: return 'sale'
-      case 3: return 'free-graffiti'
+      case 1: return `${'/art' || '/art/#id'}`;
+      case 2: return `${'/sale' || '/sale/#id'}`;
+      case 3: return 'free-graffiti';
     }
   }
 
@@ -43,10 +43,10 @@ const checkActive = (active, setActive, router) => {
         case `${'/' && '/[id]'}`:
             if (active !== 'Produkty') setActive('Produkty');
             break;
-        case `${'/art' && '/art/[id]'}`:
+        case `${'/art' || '/art/#id'}`:
             if (active !== 'Art') setActive('Art');
             break;
-        case '/sale':
+        case `${'/sale' || '/sale/#id'}`:
             if (active !== 'Promocje') setActive('Promocje');
             break;
         case '/free-graffiti':
