@@ -13,7 +13,7 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
       case 0: return '/';
       case 1: return `${'/art' || '/art/#id'}`;
       case 2: return `${'/sale' || '/sale/#id'}`;
-      case 3: return 'free-graffiti';
+      case 3: return `${'/free-graffiti' || '/free-graffiti/#id'}`;
     }
   }
 
@@ -49,7 +49,7 @@ const checkActive = (active, setActive, router) => {
         case `${'/sale' || '/sale/#id'}`:
             if (active !== 'Promocje') setActive('Promocje');
             break;
-        case '/free-graffiti':
+        case `${'/free-graffiti' || '/free-graffiti/#id'}`:
             if (active !== 'Free Graffiti') setActive('Free Graffiti');
             break;
         // default:

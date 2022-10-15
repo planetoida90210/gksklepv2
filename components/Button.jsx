@@ -1,8 +1,10 @@
 import React from 'react'
 
+
 const Button = ({title, onClick, width, padding, noIcon}) => {
+
   return (
-    <button
+       <button
     className={`ease group relative z-30 box-border line-flex ${width ? width : "w-auto"} ${padding} cursor-pointer items-center justify-center overflow-hidden rounded bg-indigo-600 bg-gradient-to-r from-violet-500 to-green-500 px-8 py-3 font-bold text-white transition-all duration-300 focus:outline-none`}
     onClick={onClick}
     >

@@ -20,7 +20,7 @@ const Product = ({product}) => {
           <p>{product.title}</p>
           {router.pathname === `/free-graffiti` ? "" : <p>{product.price} PLN</p>}
         </div>
-        <Link href={`${router.pathname}/${product.slug.current}`}>
+        <Link href={router.pathname === '/' ? `${product.slug.current}` : `${router.pathname}/${product.slug.current}`}>
           <div 
           className="flex h-16 w-16 flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-blue-500"
           >
