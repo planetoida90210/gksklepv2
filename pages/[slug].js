@@ -1,14 +1,18 @@
+import Image from 'next/image';
 import React from 'react'
-import { Product } from '../../components'
-import { sanityClient } from '../../sanity';
-import { fetchProducts } from '../../utils/fetchProducts';
+import { sanityClient, urlFor } from '../sanity';
+import { fetchProducts } from '../utils/fetchProducts';
 
 const ProductDetails = ({product}) => {
-  
+  console.log(product)
   return (
-    <div className='w-screen h-screen bg-[#E7ECEE] dark:bg-[#0f0f12]'>
+    <div className='w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-4'>
         <div className="flex items-center justify-center gap-[40px]">
-            <h1>{product.title}</h1>
+            <div className="relative w-[400px] h-[400px] dark:bg-[#24252D] bg-[#f4f4f4] rounded-xl">
+              <div className="">
+               <Image src={urlFor(product.image[0]).url()} layout="fill" objectFit="contain"/>
+              </div>
+            </div>
         </div>
     </div>
   )

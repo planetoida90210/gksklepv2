@@ -31,6 +31,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.nav-h {
+  height: calc(100vh - 105px);
+}
+
 .checkbox {
   opacity: 0;
   position: absolute;

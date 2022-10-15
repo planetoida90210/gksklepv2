@@ -40,10 +40,10 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
 
 const checkActive = (active, setActive, router) => {
     switch (router.pathname) {
-        case '/':
+        case `${'/' && '/[id]'}`:
             if (active !== 'Produkty') setActive('Produkty');
             break;
-        case '/art':
+        case `${'/art' && '/art/[id]'}`:
             if (active !== 'Art') setActive('Art');
             break;
         case '/sale':
@@ -52,8 +52,8 @@ const checkActive = (active, setActive, router) => {
         case '/free-graffiti':
             if (active !== 'Free Graffiti') setActive('Free Graffiti');
             break;
-        default:
-            setActive('');
+        // default:
+        //     setActive('');
     }
 }
 
@@ -69,7 +69,7 @@ const Header = () => {
   }, [router.pathname]);
 
   return (
-    <header className="sticky top-0 z-30 flex w-full items-center justify-between p-4 dark:bg-[#0f0f12] bg-[#E7ECEE]">
+    <header className="sticky top-0 z-30 flex w-full items-center justify-between p-4 pb-0 dark:bg-[#0f0f12] bg-[#E7ECEE]">
     <div className="flex items-center justify-center md:w-1/5">
       <Link href="/">
       <div 
