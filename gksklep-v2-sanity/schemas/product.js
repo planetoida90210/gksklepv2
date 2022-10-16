@@ -38,34 +38,43 @@ export default {
     {
         title: 'Rozmiar',
         name: 'rozmiar',
-        type: 'document',
+        type: 'object',
+        fieldsets: [
+          {name: 'size', title: 'Avilable sizes'}
+        ],
         fields: [
             {
             title: 'S',
             name: 's',
-            type: 'boolean'
+            type: 'boolean',
+            fieldset: 'size'
           },
             {
             title: 'M',
             name: 'm',
-            type: 'boolean'
+            type: 'boolean',
+            fieldset: 'size'
           },
             {
             title: 'L',
             name: 'l',
-            type: 'boolean'
+            type: 'boolean',
+            fieldset: 'size'
           },
             {
+
             title: 'XL',
             name: 'xl',
-            type: 'boolean'
+            type: 'boolean',
+            fieldset: 'size'
           },
             {
             title: 'XXL',
             name: 'xxl',
-            type: 'boolean'
+            type: 'boolean',
+            fieldset: 'size'
           },
-        ]
+        ],
       },
       {
         title: 'Rozmiarowka',
