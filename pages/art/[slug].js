@@ -5,7 +5,7 @@ import { sanityClient, urlFor } from '../../sanity';
 
 
 const ProductDetails = ({product}) => {
-  console.log(product)
+
   return (
     <div className='w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-4'>
         <div className="flex items-center justify-center gap-[40px]">
