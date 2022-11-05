@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import React from 'react'
-import { Button } from '.'
 import Link from 'next/link'
+import { useTheme } from 'next-themes'
 
 // external imports
+import { Button } from '.'
 import images from '../assets/app'
 
 const SalePage = () => {
+  const theme = useTheme().theme
   return (
     <section className="sticky top-0 mx-auto flex h-screen max-w-[1350px] items-center justify-between px-8">
       <div className="space-y-8">
@@ -22,7 +24,11 @@ const SalePage = () => {
         </div>
       </div>
       <div className="relative hidden h-[450px] w-[450px] transition-all duration-500 md:inline lg:h-[600px] lg:w-[600px]">
-        <Image src={images.SaleImage} layout="fill" objectFit="contain"/>
+      {theme === 'dark' ? (
+           <Image src={images.SaleImageDark} layout="fill" objectFit="contain"/>
+        ) : (
+           <Image src={images.SaleImage} layout="fill" objectFit="contain"/>
+        )}
       </div>
     </section>
   )
