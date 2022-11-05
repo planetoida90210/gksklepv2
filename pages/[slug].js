@@ -22,7 +22,7 @@ const ProductDetails = ({product}) => {
                  layout="fill"
                  objectFit="contain"
                  className={i === index ? 'rounded-[8px] bg-indigo-600 bg-gradient-to-r from-violet-500 to-green-500 cursor-pointer' : 'rounded-[8px] dark:bg-[#24252D] bg-[#f4f4f4] w-[70px] h-[70px] cursor-pointer'}
-                 onMouseEnter={() => setIndex(i)}
+                 onClick={() => setIndex(i)}
                  />
                  </div>
               ))}
@@ -35,11 +35,43 @@ const ProductDetails = ({product}) => {
             </div>
             </div>
             </div>
-            <div className="w-[350px] h-[350px] flex flex-1 justify-center items-start pt-[60px]">
+            <div className="w-[350px] h-[350px] flex-col flex-1 justify-center items-start pt-[60px]">
               <div className="flex flex-col justify-center items-center">
               <h1 className="text-5xl">{product.title}</h1>
               <hr  className="w-4/5 mt-3 text-[0.2]"/>
               <p className="w-[55%] h-3/5 pt-[50px] text-xl">{product.description}</p>
+              </div>
+              <div className="pt-[40px] tracking-wide flex-col">
+                <h2 className="flex justify-center items-center">Tabela rozmiarów:</h2>
+                <div className="flex justify-center items-center w-full pt-8">
+                <table className="bg-[#0f0f12] text-white table-fixed border-collapse w-[80%] shadow-none rounded-lg text-lg"> 
+                    <tr className="text-center h-[40px]">
+                    <td>Rozmiar</td>
+                    <td>S</td> 
+                    <td>M</td> 
+                    <td>L</td> 
+                    <td>XL</td> 
+                    <td>XXL</td> 
+                  </tr> 
+                  
+                  <tr className="text-center h-[40px]">
+                    <td>Szerokość</td>
+                    <td>35</td> 
+                    <td>36</td> 
+                    <td>38</td> 
+                    <td></td> 
+                    <td></td> 
+                  </tr> 
+                  <tr className="text-center h-[40px]">
+                    <td>Długość</td>
+                    <td>68</td> 
+                    <td>72</td> 
+                    <td>98</td> 
+                    <td>93</td> 
+                    <td>98</td> 
+                  </tr> 
+                </table> 
+                </div>
               </div>
             </div>
         </div>
