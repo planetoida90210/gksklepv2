@@ -36,6 +36,11 @@ export default {
       to: [{ type: "categoryProduct" }],
     },
     {
+      name: "singleSize",
+      title: "Jeden Rozmiar",
+      type: "string",
+    },
+    {
       title: 'Rozmiar',
       name: 'rozmiar',
       type: 'object',

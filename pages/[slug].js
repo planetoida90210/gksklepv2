@@ -1,15 +1,16 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React,{useState} from 'react'
 import { Button } from '../components';
 import { sanityClient, urlFor } from '../sanity';
 import { fetchProducts } from '../utils/fetchProducts';
 
 const ProductDetails = ({product}) => {
+ const router = useRouter();
  const [index, setIndex] = useState(0);
- console.log(product)
 
   return (
-    <div className='w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-4 flex'>
+    <div className='w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-8 flex'>
         <div className="flex gap-[40px] p-[40px] pt-[60px]">
             <div className="flex-col">
               <div className="relative flex w-[450px] h-[450px] dark:bg-[#24252D] bg-[#f4f4f4] rounded-xl">
@@ -30,10 +31,20 @@ const ProductDetails = ({product}) => {
               ))}
               </div>
             <div className="">
-              <h1 className="tracking-wide text-2xl pt-4">Dostępne rozmiary:</h1>
+              {product.rozmiar ? (
+                <>
+                <h1 className="tracking-wide text-2xl pt-4">Dostępne rozmiary:</h1>
                 {product.rozmiar && Object.entries(product?.rozmiar).map((size, i ) => (
-                <span key={i} className={`${size[1] == false ? 'line-through text-red-500' : '' } border-2 inline-flex p-6 justify-center items-center mr-2 mt-2 uppercase w-[20px] h-[20px] text-center`}>{size}</span>
+                <span key={i} className={`${size[1] == false ? 'line-through text-red-500' : '' } dark:border-white/10 border-black/10 border-2 inline-flex p-6 justify-center items-center mr-2 mt-3 uppercase w-[20px] h-[20px] text-center`}>{size}</span>
               ))}
+                </>
+              ) : (
+                <div className="flex-col justify-center items-center space-x-20">
+                  <h1 className="tracking-wide text-2xl pt-4">Dostępny rozmiar/pojemność:</h1>
+                  <span className="dark:border-white/10 border-black/10 border-2 inline-flex p-5 items-center justify-center mr-2 mt-3 uppercase w-[120px] h-[30px] text-center">{product.singleSize}</span>
+                </div>
+              )}
+              
             </div>
             </div>
             </div>
@@ -41,14 +52,14 @@ const ProductDetails = ({product}) => {
               <div className="flex flex-col justify-center items-center">
               <h1 className="text-5xl">{product.title}</h1>
               <hr  className="w-4/5 mt-3 text-[0.2]"/>
-              <p className="w-[55%] h-3/5 pt-[50px] text-xl">{product.description}</p>
+              <p className="w-[70%] h-3/5 pt-[50px] text-xl">{product.description}</p>
               </div>
-              <div className="pt-[40px] tracking-wide flex-col">
+              <div className="pt-[30px] tracking-wide flex-col">
                 {product?.rozmiarowka ? (
                   <>
-                     <h2 className="flex justify-center items-center">Tabela rozmiarów:</h2>
-                <div className="flex justify-center items-center w-full pt-8">
-                <table className="bg-[#0f0f12] text-white table-fixed border-collapse w-[80%] shadow-none rounded-lg text-lg">
+                     <h2 className="flex justify-center items-center text-xl">Tabela rozmiarów:</h2>
+                <div className="flex justify-center items-center w-full pt-6">
+                <table className="bg-white dark:bg-[#0f0f12] text-black dark:text-white table-fixed border-collapse w-[70%] shadow-none rounded-lg text-lg">
                   <tbody> 
                     <tr className="text-center h-[40px]">
                     <td>Rozmiar</td>
@@ -73,12 +84,16 @@ const ProductDetails = ({product}) => {
                   </tbody>
                 </table> 
                 </div>
-                <Button />
                 </>
                 ) : (
-                  <Button />
+                  <div className="flex justify-center pt-[150px]">
+                   
+                </div>
                 )            
-                }   
+                } 
+                <div className="flex justify-center pt-[150px]">
+                  <Button title="Powrót do strony głównej" onClick={() => router.back()}/>
+                </div>  
               </div>
             </div>
         </div>
