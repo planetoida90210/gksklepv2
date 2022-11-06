@@ -86,6 +86,29 @@ export default {
       title: "Opis",
       type: "text",
     },
-    
+    {
+      title: 'rozmiarowka',
+      name: 'rozmiarowka',
+      type: 'array',
+      of: [
+         {
+             title: 'size',
+             name: 'size',
+             type: 'object',
+             fields: [
+              {
+                title: 'width',
+                name: 'width',
+                type: 'string'
+              },
+              {
+                title: 'height',
+                name: 'height',
+                type: 'string'
+              },
+             ]
+         },
+      ]
+     },
   ],
 };

@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import React,{useState} from 'react'
+import { Button } from '../components';
 import { sanityClient, urlFor } from '../sanity';
 import { fetchProducts } from '../utils/fetchProducts';
 
 const ProductDetails = ({product}) => {
  const [index, setIndex] = useState(0);
+ console.log(product)
 
   return (
     <div className='w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-4 flex'>
@@ -42,9 +44,12 @@ const ProductDetails = ({product}) => {
               <p className="w-[55%] h-3/5 pt-[50px] text-xl">{product.description}</p>
               </div>
               <div className="pt-[40px] tracking-wide flex-col">
-                <h2 className="flex justify-center items-center">Tabela rozmiarów:</h2>
+                {product?.rozmiarowka ? (
+                  <>
+                     <h2 className="flex justify-center items-center">Tabela rozmiarów:</h2>
                 <div className="flex justify-center items-center w-full pt-8">
-                <table className="bg-[#0f0f12] text-white table-fixed border-collapse w-[80%] shadow-none rounded-lg text-lg"> 
+                <table className="bg-[#0f0f12] text-white table-fixed border-collapse w-[80%] shadow-none rounded-lg text-lg">
+                  <tbody> 
                     <tr className="text-center h-[40px]">
                     <td>Rozmiar</td>
                     <td>S</td> 
@@ -52,26 +57,28 @@ const ProductDetails = ({product}) => {
                     <td>L</td> 
                     <td>XL</td> 
                     <td>XXL</td> 
-                  </tr> 
-                  
+                  </tr>  
                   <tr className="text-center h-[40px]">
                     <td>Szerokość</td>
-                    <td>35</td> 
-                    <td>36</td> 
-                    <td>38</td> 
-                    <td></td> 
-                    <td></td> 
+                    {product.rozmiarowka.map((item) => (
+                      <td key={item.key}>{item.width}</td>
+                    ))}
                   </tr> 
                   <tr className="text-center h-[40px]">
                     <td>Długość</td>
-                    <td>68</td> 
-                    <td>72</td> 
-                    <td>98</td> 
-                    <td>93</td> 
-                    <td>98</td> 
+                    {product.rozmiarowka.map((item) => (
+                      <td key={item.key}>{item.height}</td>
+                    ))}
                   </tr> 
+                  </tbody>
                 </table> 
                 </div>
+                <Button />
+                </>
+                ) : (
+                  <Button />
+                )            
+                }   
               </div>
             </div>
         </div>
