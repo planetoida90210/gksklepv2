@@ -10,11 +10,11 @@ const ProductDetails = ({product}) => {
  const [index, setIndex] = useState(0);
 
   return (
-    <div className='w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-8 flex'>
+    <div className="w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-8 flex">
         <div className="flex gap-[40px] p-[40px] pt-[60px]">
             <div className="flex-col">
               <div className="relative flex w-[450px] h-[450px] dark:bg-[#24252D] bg-[#f4f4f4] rounded-xl">
-               <Image src={urlFor(product.image && product.image[index]).url()} layout="fill" objectFit="contain"/>
+               <Image src={urlFor(product?.image && product.image[index]).url()} layout="fill" objectFit="contain"/>
               </div>
               <div className="flex gap-4 pt-6">
               {product.image?.map((item,i) => (
@@ -69,7 +69,7 @@ const ProductDetails = ({product}) => {
                     <td>XL</td> 
                     <td>XXL</td> 
                   </tr>  
-                  <tr className="text-center h-[40px]">
+                  <tr key="width" className="text-center h-[40px]">
                     <td>Szerokość</td>
                     {product.rozmiarowka.map((item) => (
                       <td key={item.key}>{item.width}</td>

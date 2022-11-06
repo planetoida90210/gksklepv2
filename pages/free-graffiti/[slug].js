@@ -7,14 +7,14 @@ import { sanityClient, urlFor } from '../../sanity';
 const ProductDetails = ({product}) => {
   console.log(product)
   return (
-    <div className='w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-4'>
-        <div className="flex items-center justify-center gap-[40px]">
-            <div className="relative w-[400px] h-[400px] dark:bg-[#24252D] bg-[#f4f4f4] rounded-xl">
-              <div className="">
-               <Image src={urlFor(product.image[0]).url()} layout="fill" objectFit="contain"/>
-              </div>
-            </div>
-        </div>
+    <div className="w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-8 flex">
+      <div className="flex gap-[40px] p-[40px] pt-[60px]">
+        <div className="flex-col">
+          <div className="relative flex w-[450px] h-[450px] dark:bg-[#24252D] bg-[#f4f4f4] rounded-xl">
+            <Image src={urlFor(product?.image[0]).url()} layout="fill" objectFit="contain"/>
+          </div>
+        </div>  
+      </div>
     </div>
   )
 }

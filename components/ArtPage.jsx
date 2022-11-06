@@ -14,8 +14,8 @@ const ArtPage = () => {
       <div className="space-y-8">
         <h1 className="space-y-3 text-5xl font-semibold tracking-wide lg:text-6xl xl:text-7xl">
           <span className="block bg-gradient-to-l from-green-500 via-blue-500 to-purple-600 text-transparent bg-clip-text">Galeria Koloru</span>
-          <span className="block">Kącik</span>
-          <span className="block">Handmade</span>
+          <span className="block">Wydawnictwa /</span>
+          <span className="block">Sztuka</span>
         </h1>
         <div className="space-x-8">
           <Link href="#art">
