@@ -14,7 +14,7 @@ const ProductDetails = ({product}) => {
         <div className="flex gap-[40px] p-[40px] pt-[60px]">
             <div className="flex-col">
               <div className="relative flex w-[450px] h-[450px] dark:bg-[#24252D] bg-[#f4f4f4] rounded-xl">
-               <Image src={urlFor(product?.image && product.image[index]).url()} layout="fill" objectFit="contain"/>
+               <Image src={urlFor(product?.image && product?.image[index]).url()} layout="fill" objectFit="contain"/>
               </div>
               <div className="flex gap-4 pt-6">
               {product.image?.map((item,i) => (
