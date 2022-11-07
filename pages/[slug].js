@@ -35,13 +35,13 @@ const ProductDetails = ({product}) => {
                 <>
                 <h1 className="tracking-wide text-2xl pt-4">Dostępne rozmiary:</h1>
                 {product.rozmiar && Object.entries(product?.rozmiar).map((size, i ) => (
-                <span key={i} className={`${size[1] == false ? 'line-through text-red-500' : '' } dark:border-white/10 border-black/10 border-2 inline-flex p-6 justify-center items-center mr-2 mt-3 uppercase w-[20px] h-[20px] text-center`}>{size}</span>
+                <span key={i} className={`${size[1] == false ? 'line-through text-red-500' : '' } dark:border-white/10 border-black/10 border-2 inline-flex p-6 justify-center items-center mr-2 mt-3 uppercase w-[20px] h-[20px] text-center rounded-md`}>{size}</span>
               ))}
                 </>
               ) : (
-                <div className="flex-col justify-center items-center space-x-20">
+                <div className="flex-col justify-center items-center space-x-[100px]">
                   <h1 className="tracking-wide text-2xl pt-4">Dostępny rozmiar/pojemność:</h1>
-                  <span className="dark:border-white/10 border-black/10 border-2 inline-flex p-5 items-center justify-center mr-2 mt-3 uppercase w-[120px] h-[30px] text-center">{product.singleSize}</span>
+                  <span className="dark:border-white/10 border-black/10 border-2 inline-flex p-5 items-center justify-center mr-2 mt-3 uppercase w-[120px] h-[30px] text-center rounded-md">{product.singleSize}</span>
                 </div>
               )}
               
