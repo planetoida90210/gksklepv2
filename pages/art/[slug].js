@@ -39,6 +39,13 @@ const ProductDetails = ({product}) => {
             </div>
         </div>  
       </div>
+      <div className="w-[350px] h-[350px] flex-col flex-1 justify-center items-start pt-[60px]">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-5xl">{product.title}</h1>
+            <hr  className="w-4/5 mt-3 text-[0.2]"/>
+            <p className="w-[70%] h-3/5 pt-[50px] text-xl">{product.description}</p>
+        </div>
+      </div>
     </div>
   )
 }
