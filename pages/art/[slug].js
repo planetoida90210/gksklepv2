@@ -2,10 +2,13 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import { fetchArtProducts } from '../../utils/fetchArtProducts';
 import { sanityClient, urlFor } from '../../sanity';
+import { useRouter } from 'next/router';
+import { Button } from '../../components';
 
 
 const ProductDetails = ({product}) => {
   const [index, setIndex] = useState(0);
+  const router = useRouter()
   console.log(product)
 
   return (
@@ -45,6 +48,11 @@ const ProductDetails = ({product}) => {
             <hr  className="w-4/5 mt-3 text-[0.2]"/>
             <p className="w-[70%] h-3/5 pt-[50px] text-xl">{product.description}</p>
         </div>
+      <div className="pt-[30px] tracking-wide flex-col">
+        <div className="flex justify-center pt-[150px]">
+          <Button title="Powrót do strony głównej" onClick={() => router.back()}/>
+        </div>  
+      </div>
       </div>
     </div>
   )
