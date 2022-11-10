@@ -52,7 +52,7 @@ const ProductDetails = ({product}) => {
               <div className="flex flex-col justify-center items-center">
               <h1 className="text-5xl">{product.title}</h1>
               <hr  className="w-4/5 mt-3 text-[0.2]"/>
-              <p className="w-[70%] h-3/5 pt-[50px] text-xl">{product.description}</p>
+              <p className="w-[70%] h-3/5 pt-[40px] text-xl">{product.description}</p>
               </div>
               <div className="pt-[30px] tracking-wide flex-col">
                 {product?.rozmiarowka ? (
@@ -89,9 +89,13 @@ const ProductDetails = ({product}) => {
                   <div className="flex justify-center pt-[150px]">
                    
                 </div>
-                )            
-                } 
-                <div className="flex justify-center pt-[150px]">
+                )          
+                }
+                <div className="flex w-3/5 mx-auto justify-between items-center pt-10 uppercase text-2xl border-b border-b-white/50 pb-1">
+                  <p>cena:</p>
+                  <p>{product.price} pln</p>
+                </div>
+                <div className="flex justify-center pt-[120px]">
                   <Button title="Powrót do strony głównej" onClick={() => router.back()}/>
                 </div>  
               </div>
