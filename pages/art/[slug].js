@@ -72,8 +72,8 @@ const ProductDetails = ({product}) => {
                 </div>
                 </>
                 ) : (
-                  <div className="flex justify-center pt-[150px]">
-                   
+                <div className="flex justify-center pt-[150px]">
+                  
                 </div>
                 )            
                 } 
