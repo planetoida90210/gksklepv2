@@ -32,10 +32,12 @@ const ProductDetails = ({product}) => {
             </div>
             <div>
             <div className="flex-col justify-center items-center pt-2">
-                  <h1 className="tracking-wide text-2xl pt-4">Dodatkowe informacje:</h1>
-                  {product.additionalInfo.map((item) => (
-                    <span key={item._key} className="dark:border-white/10 border-black/10 border-2 inline-flex p-7 items-center justify-center mr-2 mt-3 uppercase w-[120px] rounded-md h-[30px] text-center">{item.text}</span>
-                  ))}
+              <h1 className="tracking-wide text-2xl pt-4">Dodatkowe informacje:</h1>
+              <div className="flex items-center">
+              {product.additionalInfo.map((item) => (
+              <div key={item._key} className="dark:border-white/10 border-black/10 border-2 p-7 flex items-center justify-center mr-2 mt-3 uppercase w-[120px] rounded-md h-[40px] text-center">{item.text}</div>
+              ))}
+              </div>
             </div>
             </div>
         </div>  
@@ -115,10 +117,3 @@ export const getStaticPaths = async () => {
 }
 
 export default ProductDetails
-
-
-{/* <div className="flex items-center w-[500px]">
-              {product.additionalInfo.map((item) => (
-                <div key={item._key} className="dark:border-white/10 border-black/10 border-2 p-7 flex items-center justify-center mr-2 mt-3 uppercase w-[120px] rounded-md h-[40px] text-center">{item.text}</div>
-              ))}
-              </div>  */}
