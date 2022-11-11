@@ -48,7 +48,14 @@ export default {
         {
             title: 'color',
             name: 'color',
-            type: 'string'
+            type: 'object',
+            fields: [
+              {
+                title: 'color',
+                name: 'color',
+                type: 'text'
+              }
+            ]
         }
      ]
     },

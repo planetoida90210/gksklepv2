@@ -9,6 +9,7 @@ import { Button } from '../../components';
 const ProductDetails = ({product}) => {
   const router = useRouter();
   const [index, setIndex] = useState(0);
+  console.log(product)
   return (
     <div className="w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-8 flex">
       <div className="flex gap-[40px] p-[40px] pt-[60px]">
@@ -48,40 +49,27 @@ const ProductDetails = ({product}) => {
             <hr  className="w-[90%] mt-3 text-[0.2]"/>
             <p className="w-[70%] h-3/5 pt-[50px] text-xl">{product.description}</p>
         </div>
-        <div className="pt-[30px] tracking-wide flex-col">
-                {/* {product?.rozmiarowka ? (
-                  <>
-                <h2 className="flex justify-center items-center text-xl">Wymiary:</h2>
-                <div className="flex justify-center items-center w-full pt-3">
-                <table className="bg-white dark:bg-[#0f0f12] text-black dark:text-white table-fixed border-collapse w-full shadow-none rounded-lg text-lg">
-                  <tbody> 
-                  <tr key="width" className="text-center h-[40px]">
-                    <td>Szerokość</td>
-                    {product.rozmiarowka.map((item) => (
-                      <td key={item.key} className="uppercase">{item.width} cm</td>
-                    ))}
-                  </tr> 
-                  <tr className="text-center h-[40px]">
-                    <td>Długość</td>
-                    {product.rozmiarowka.map((item) => (
-                      <td key={item.key} className="uppercase">{item.height} cm</td>
-                    ))}
-                  </tr> 
-                  </tbody>
-                </table> 
+        <div className="pt-[10px] tracking-wide flex-col">
+                {product?.colors ? (
+                <div className="px-[10px] w-5/6 mx-auto">
+                <h2 className="flex justify-center items-center text-xl pb-2">Kolory:</h2>
+                <div className="flex flex-wrap justify-center items-center gap-8">
+                  {product.colors.map((item,i) => (
+                    <div key={item._key} className={`w-[100px] h-[35px] bg-[${item.color}] rounded-md`}>{item.color}</div>
+                  ))}
                 </div>
-                </>
+                </div>
                 ) : (
                 <div className="flex justify-center pt-[150px]">
-                  
+                  <h2>Wymiary:</h2>
                 </div>
                 )            
-                }  */}
+                } 
                 <div className="flex w-3/5 mx-auto justify-between items-center pt-10 uppercase text-2xl border-b border-b-white/50 pb-1">
                   <p>cena:</p>
                   <p>{product.price} pln</p>
                 </div>
-                <div className="flex justify-center pt-[120px]">
+                <div className="flex justify-center pt-[50px]">
                   <Button title="Powrót do strony głównej" onClick={() => router.back()}/>
                 </div>  
               </div>
