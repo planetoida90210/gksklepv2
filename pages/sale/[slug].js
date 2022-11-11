@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { fetchSaleProducts } from '../../utils/fetchSaleProducts';
 import { sanityClient, urlFor } from '../../sanity';
 import { useRouter } from 'next/router';
+import { Button } from '../../components';
 
 
 const ProductDetails = ({product}) => {
@@ -11,9 +12,9 @@ const ProductDetails = ({product}) => {
   return (
     <div className="w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-8 flex">
       <div className="flex gap-[40px] p-[40px] pt-[60px]">
-      <div className="flex-col">
-        <div className="relative flex w-[450px] h-[450px] dark:bg-[#24252D] bg-[#f4f4f4] rounded-xl">
-          <Image src={urlFor(product?.image && product?.image[index]).url()} layout="fill" objectFit="contain"/>
+        <div className="flex-col">
+          <div className="relative flex w-[450px] h-[450px] dark:bg-[#24252D] bg-[#f4f4f4] rounded-xl">
+            <Image src={urlFor(product?.image && product?.image[index]).url()} layout="fill" objectFit="contain"/>
           </div>
             <div className="flex gap-4 pt-6">
               {product.image?.map((item,i) => (
@@ -28,19 +29,60 @@ const ProductDetails = ({product}) => {
                  />
                  </div>
               ))}
-          </div>
-          <div>
-          <div className="flex-col justify-center items-center pt-2">
-            <h1 className="tracking-wide text-2xl pt-4">Dodatkowe informacje:</h1>
-              <div className="flex items-center w-[500px]">
-                {product.additionalInfo.map((item) => (
-                <div key={item._key} className="dark:border-white/10 border-black/10 border-2 p-7 flex items-center justify-center mr-2 mt-3 uppercase w-[120px] rounded-md h-[40px] text-center">{item.text}</div>
-              ))}
-              </div>
-              
-          </div>
-          </div>
+            </div>
+            <div>
+            <div className="flex-col justify-center items-center pt-2">
+                  <h1 className="tracking-wide text-2xl pt-4">Dodatkowe informacje:</h1>
+                  {product.additionalInfo.map((item) => (
+                    <span key={item._key} className="dark:border-white/10 border-black/10 border-2 inline-flex p-7 items-center justify-center mr-2 mt-3 uppercase w-[120px] rounded-md h-[30px] text-center">{item.text}</span>
+                  ))}
+            </div>
+            </div>
+        </div>  
+      </div>
+      <div className="w-[400px] h-[400px] flex-col flex-1 justify-center items-start pt-[60px]">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-5xl">{product.title}</h1>
+            <hr  className="w-[90%] mt-3 text-[0.2]"/>
+            <p className="w-[70%] h-3/5 pt-[50px] text-xl">{product.description}</p>
         </div>
+        <div className="pt-[30px] tracking-wide flex-col">
+                {/* {product?.rozmiarowka ? (
+                  <>
+                <h2 className="flex justify-center items-center text-xl">Wymiary:</h2>
+                <div className="flex justify-center items-center w-full pt-3">
+                <table className="bg-white dark:bg-[#0f0f12] text-black dark:text-white table-fixed border-collapse w-full shadow-none rounded-lg text-lg">
+                  <tbody> 
+                  <tr key="width" className="text-center h-[40px]">
+                    <td>Szerokość</td>
+                    {product.rozmiarowka.map((item) => (
+                      <td key={item.key} className="uppercase">{item.width} cm</td>
+                    ))}
+                  </tr> 
+                  <tr className="text-center h-[40px]">
+                    <td>Długość</td>
+                    {product.rozmiarowka.map((item) => (
+                      <td key={item.key} className="uppercase">{item.height} cm</td>
+                    ))}
+                  </tr> 
+                  </tbody>
+                </table> 
+                </div>
+                </>
+                ) : (
+                <div className="flex justify-center pt-[150px]">
+                  
+                </div>
+                )            
+                }  */}
+                <div className="flex w-3/5 mx-auto justify-between items-center pt-10 uppercase text-2xl border-b border-b-white/50 pb-1">
+                  <p>cena:</p>
+                  <p>{product.price} pln</p>
+                </div>
+                <div className="flex justify-center pt-[120px]">
+                  <Button title="Powrót do strony głównej" onClick={() => router.back()}/>
+                </div>  
+              </div>
       </div>
     </div>
   )
@@ -73,3 +115,10 @@ export const getStaticPaths = async () => {
 }
 
 export default ProductDetails
+
+
+{/* <div className="flex items-center w-[500px]">
+              {product.additionalInfo.map((item) => (
+                <div key={item._key} className="dark:border-white/10 border-black/10 border-2 p-7 flex items-center justify-center mr-2 mt-3 uppercase w-[120px] rounded-md h-[40px] text-center">{item.text}</div>
+              ))}
+              </div>  */}
