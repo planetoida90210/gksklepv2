@@ -33,12 +33,23 @@ const ProductDetails = ({product}) => {
             </div>
             <div>
             <div className="flex-col justify-center items-center pt-2">
-              <h1 className="tracking-wide text-2xl pt-4">Dodatkowe informacje:</h1>
-              <div className="flex items-center">
-              {product.additionalInfo.map((item) => (
-              <div key={item._key} className="dark:border-white/10 border-black/10 border-2 p-7 flex items-center justify-center mr-2 mt-3 uppercase w-[120px] rounded-md h-[40px] text-center">{item.text}</div>
-              ))}
+              {product.additionalInfo ? (
+              <>
+                <h1 className="tracking-wide text-2xl pt-4">Dodatkowe informacje:</h1>
+                <div className="flex items-center">
+                  {product.additionalInfo.map((item) => (
+                    <div key={item._key} className="dark:border-white/10 border-black/10 border-2 p-7 flex items-center justify-center mr-2 mt-3 uppercase w-[120px] rounded-md h-[40px] text-center">{item.text}</div>
+                  ))}
               </div>
+              </> 
+              ) : (
+                <>
+                <h1 className="tracking-wide text-2xl pt-4">Dostępne rozmiary:</h1>
+                {product.rozmiar && Object.entries(product?.rozmiar).map((size, i ) => (
+                <span key={i} className={`${size[1] == false ? 'line-through text-red-500' : '' } dark:border-white/10 border-black/10 border-2 inline-flex p-6 justify-center items-center mr-2 mt-3 uppercase w-[20px] h-[20px] text-center rounded-md`}>{size}</span>
+              ))}
+                </>
+              )}
             </div>
             </div>
         </div>  
@@ -60,7 +71,7 @@ const ProductDetails = ({product}) => {
                 </div>
                 </div>
                 ) : (
-                <div className="flex justify-center pt-[150px]">
+                <div className="flex-col justify-center pt-5">
                 <h2 className="flex justify-center items-center text-xl">Tabela rozmiarów:</h2>
                 <div className="flex justify-center items-center w-full pt-6">
                 <table className="bg-white dark:bg-[#0f0f12] text-black dark:text-white table-fixed border-collapse w-[70%] shadow-none rounded-lg text-lg">
