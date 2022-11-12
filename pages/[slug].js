@@ -57,7 +57,7 @@ const ProductDetails = ({product}) => {
               <div className="pt-[30px] tracking-wide flex-col">
                 {product?.rozmiarowka ? (
                   <>
-                     <h2 className="flex justify-center items-center text-xl">Tabela rozmiarów:</h2>
+                <h2 className="flex justify-center items-center text-xl">Tabela rozmiarów:</h2>
                 <div className="flex justify-center items-center w-full pt-6">
                 <table className="bg-white dark:bg-[#0f0f12] text-black dark:text-white table-fixed border-collapse w-[70%] shadow-none rounded-lg text-lg">
                   <tbody> 

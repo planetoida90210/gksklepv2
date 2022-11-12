@@ -41,6 +41,11 @@ export default {
       type: "number",
     },
     {
+      name: "salePrice",
+      title: "Promocyjna Cena",
+      type: "number"
+    },
+    {
      title: 'colors',
      name: 'colors',
      type: 'array',
@@ -72,6 +77,71 @@ export default {
               {
                 title: 'text',
                 name: 'text',
+                type: 'string'
+              },
+             ]
+         },
+      ]
+     },
+     {
+      title: 'Rozmiar',
+      name: 'rozmiar',
+      type: 'object',
+      fieldsets: [
+        {name: 'size', title: 'Avilable sizes'}
+      ],
+      fields: [
+          {
+          title: 'S',
+          name: 's',
+          type: 'boolean',
+          fieldset: 'size'
+        },
+          {
+          title: 'M',
+          name: 'm',
+          type: 'boolean',
+          fieldset: 'size'
+        },
+          {
+          title: 'L',
+          name: 'l',
+          type: 'boolean',
+          fieldset: 'size'
+        },
+          {
+
+          title: 'XL',
+          name: 'xl',
+          type: 'boolean',
+          fieldset: 'size'
+        },
+          {
+          title: 'XXL',
+          name: 'xxl',
+          type: 'boolean',
+          fieldset: 'size'
+        },
+      ],
+    },
+     {
+      title: 'rozmiarowka',
+      name: 'rozmiarowka',
+      type: 'array',
+      of: [
+         {
+             title: 'size',
+             name: 'size',
+             type: 'object',
+             fields: [
+              {
+                title: 'width',
+                name: 'width',
+                type: 'string'
+              },
+              {
+                title: 'height',
+                name: 'height',
                 type: 'string'
               },
              ]

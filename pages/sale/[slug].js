@@ -61,13 +61,42 @@ const ProductDetails = ({product}) => {
                 </div>
                 ) : (
                 <div className="flex justify-center pt-[150px]">
-                  <h2>Wymiary:</h2>
+                <h2 className="flex justify-center items-center text-xl">Tabela rozmiarów:</h2>
+                <div className="flex justify-center items-center w-full pt-6">
+                <table className="bg-white dark:bg-[#0f0f12] text-black dark:text-white table-fixed border-collapse w-[70%] shadow-none rounded-lg text-lg">
+                  <tbody> 
+                    <tr className="text-center h-[40px]">
+                    <td>Rozmiar</td>
+                    <td>S</td> 
+                    <td>M</td> 
+                    <td>L</td> 
+                    <td>XL</td> 
+                    <td>XXL</td> 
+                  </tr>  
+                  <tr key="width" className="text-center h-[40px]">
+                    <td>Szerokość</td>
+                    {product.rozmiarowka.map((item) => (
+                      <td key={item.key}>{item.width}</td>
+                    ))}
+                  </tr> 
+                  <tr className="text-center h-[40px]">
+                    <td>Długość</td>
+                    {product.rozmiarowka.map((item) => (
+                      <td key={item.key}>{item.height}</td>
+                    ))}
+                  </tr> 
+                  </tbody>
+                </table> 
+                </div>
                 </div>
                 )            
                 } 
                 <div className="flex w-3/5 mx-auto justify-between items-center pt-10 uppercase text-2xl border-b border-b-white/50 pb-1">
                   <p>cena:</p>
-                  <p>{product.price} pln</p>
+                  <div className="flex">
+                  <p className="text-red-500 line-through px-2">{product.price}</p>
+                  <p>{product.salePrice} pln</p>
+                  </div>
                 </div>
                 <div className="flex justify-center pt-[50px]">
                   <Button title="Powrót do strony głównej" onClick={() => router.back()}/>
