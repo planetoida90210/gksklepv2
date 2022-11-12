@@ -54,8 +54,8 @@ const ProductDetails = ({product}) => {
                 <div className="px-[10px] w-5/6 mx-auto">
                 <h2 className="flex justify-center items-center text-xl pb-2">Kolory:</h2>
                 <div className="flex flex-wrap justify-center items-center gap-8">
-                  {product.colors.map((item,i) => (
-                    <div key={item._key} className={`w-[100px] h-[35px] bg-[${item.color}] rounded-md`}>{item.color}</div>
+                  {product.colors.map((item,) => (
+                    <div key={item._key} style={{ backgroundColor: `${item.color}` }} className={`w-[100px] h-[35px] rounded-md`}>{item.color}</div>
                   ))}
                 </div>
                 </div>
