@@ -35,6 +35,15 @@ export default {
       },
     },
     {
+      name: "imageQr",
+      title: "Kod QR",
+      type: "array",
+      of: [{ type: "image" }],
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: "category",
       title: "Kategoria",
       type: "reference",
@@ -59,6 +68,11 @@ export default {
          },
       ]
      },
+     {
+      name: "adress",
+      title: "Adres",
+      type: "text",
+    },
      {
       name: "description",
       title: "Opis",

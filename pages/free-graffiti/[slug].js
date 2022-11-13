@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { fetchGraffitiProducts } from '../../utils/fetchGraffitiProducts';
 import { sanityClient, urlFor } from '../../sanity';
 import { useRouter } from 'next/router';
+import { Button } from '../../components';
 
 
 const ProductDetails = ({product}) => {
@@ -47,7 +48,23 @@ const ProductDetails = ({product}) => {
           <h1 className="text-5xl">{product.title}</h1>
             <hr  className="w-5/6 mt-3 text-[0.2]"/>
             <p className="w-[80%] pt-[50px] text-xl tracking-wide">{product.description}</p>
+            <div className="flex w-4/5 pt-3 text-2xl justify-between">
+              <p>Adres:</p>
+              <p>{product.adress}</p>
+            </div>
+            <hr  className="w-5/6 mt-4 text-[0.2]"/>
         </div>
+      <div className="flex justify-around items-center pt-[30px]">
+        <div>
+        <p className="pb-2 pl-1 tracking-wider">Dojazd komunikacją:</p>
+        <div className="relative w-[200px] h-[200px] dark:bg-gray-700/20 rounded-xl">
+          <Image src={urlFor(product?.imageQr[1]).url()} layout="fill" objectFit="contain" />
+        </div>
+        </div>
+        <div className="">
+          <Button title="Powrót do strony głównej" onClick={() => router.back()}/>
+        </div>
+      </div>  
       </div>
     </div>
   )
