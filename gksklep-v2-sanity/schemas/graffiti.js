@@ -41,9 +41,28 @@ export default {
       to: [{ type: "categoryGraffiti" }],
     },
     {
+      title: 'dodatkowe Informacje',
+      name: 'additionalInfo',
+      type: 'array',
+      of: [
+         {
+             title: 'info',
+             name: 'info',
+             type: 'object',
+             fields: [
+              {
+                title: 'text',
+                name: 'text',
+                type: 'string'
+              },
+             ]
+         },
+      ]
+     },
+     {
       name: "description",
       title: "Opis",
-      type: "blockContent",
+      type: "text",
     },
   ],
 };

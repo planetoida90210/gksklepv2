@@ -18,7 +18,7 @@ const Product = ({product}) => {
       <div className="flex flex-1 items-center justify-between space-x-3">
         <div className="space-y-2 text-xl text-black/80 dark:text-white md:text-2xl">
           <p>{product.title}</p>
-          {router.pathname === `/free-graffiti` ? "" : <p>{product.price} PLN</p>}
+          {router.pathname === `/free-graffiti` ? "" : <p>{product.salePrice ? product.salePrice : product.price} PLN</p>}
         </div>
         <Link href={router.pathname === '/' ? `${product.slug.current}` : `${router.pathname}/${product.slug.current}`}>
           <div 

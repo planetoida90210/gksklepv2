@@ -66,7 +66,7 @@ const ProductDetails = ({product}) => {
                 <h2 className="flex justify-center items-center text-xl pb-2">Kolory:</h2>
                 <div className="flex flex-wrap justify-center items-center gap-8">
                   {product.colors.map((item,) => (
-                    <div key={item._key} style={{ backgroundColor: `${item.color}` }} className={`w-[100px] h-[35px] rounded-md`}>{item.color}</div>
+                    <div key={item._key} style={{ backgroundColor: `${item.color}` }} className={`w-[100px] h-[35px] rounded-md`}></div>
                   ))}
                 </div>
                 </div>
