@@ -26,7 +26,7 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
           setActive(item);
           if (isMobile) setIsOpen(false);
          }}
-         className={`${active === item ? 'underline decoration-[#F7AB0A]/50 underline-offset-8' : 'text-white' }`}
+         className={`${active === item ? 'underline decoration-[#F7AB0A]/50 underline-offset-8' : 'text-gray-600/80 dark:text-white/75' }`}
         >
           <Link href={generateLink(i)}>{item}</Link>
         </li>

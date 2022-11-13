@@ -3,13 +3,17 @@ import React, { useState } from 'react'
 import { fetchGraffitiProducts } from '../../utils/fetchGraffitiProducts';
 import { sanityClient, urlFor } from '../../sanity';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes'
+
+//external imports
 import { Button } from '../../components';
 
 
 const ProductDetails = ({product}) => {
  const router = useRouter();
  const [index, setIndex] = useState(0);
-  console.log(product)
+ const theme = useTheme().theme
+
   return (
     <div className="w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-8 flex">
       <div className="flex gap-[40px] p-[40px] pt-[60px]">
@@ -57,8 +61,12 @@ const ProductDetails = ({product}) => {
       <div className="flex justify-around items-center pt-[30px]">
         <div>
         <p className="pb-2 pl-1 tracking-wider">Dojazd komunikacją:</p>
-        <div className="relative w-[200px] h-[200px] dark:bg-gray-700/20 rounded-xl">
-          <Image src={urlFor(product?.imageQr[1]).url()} layout="fill" objectFit="contain" />
+        <div className="relative w-[200px] h-[200px] bg-white dark:bg-gray-700/20 rounded-xl">
+          {theme === 'dark' ? (
+            <Image src={urlFor(product?.imageQr[0]).url()} layout="fill" objectFit="contain" />
+          ) : (
+            <Image src={urlFor(product?.imageQr[1]).url()} layout="fill" objectFit="contain" />
+          )}
         </div>
         </div>
         <div className="">
