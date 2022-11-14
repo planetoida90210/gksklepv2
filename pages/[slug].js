@@ -51,7 +51,7 @@ const ProductDetails = ({product}) => {
             <div className="w-[350px] h-[350px] flex-col flex-1 justify-center items-start pt-[60px]">
               <div className="flex flex-col justify-center items-center">
               <h1 className="text-5xl">{product.title}</h1>
-              <hr  className="w-4/5 mt-3 text-[0.2]"/>
+              <hr  className="w-4/5 mt-3 text-[0.2] bg-black"/>
               <p className="w-[70%] h-3/5 pt-[40px] text-xl">{product.description}</p>
               </div>
               <div className="pt-[30px] tracking-wide flex-col">
@@ -91,7 +91,7 @@ const ProductDetails = ({product}) => {
                 </div>
                 )          
                 }
-                <div className="flex w-3/5 mx-auto justify-between items-center pt-10 uppercase text-2xl border-b border-b-white/50 pb-1">
+                <div className="flex w-3/5 mx-auto justify-between items-center pt-10 uppercase text-2xl border-b border-b-black/40 dark:border-b-white/50 pb-1">
                   <p>cena:</p>
                   <p>{product.price} pln</p>
                 </div>

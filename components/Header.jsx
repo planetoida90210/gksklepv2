@@ -62,7 +62,6 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
   const router = useRouter();
   const [ active, setActive ] = useState('Produkty');
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     checkActive(active, setActive, router)

@@ -47,16 +47,16 @@ const ProductDetails = ({product}) => {
             </div>
         </div>  
       </div>
-      <div className="w-[400px] h-[400px] flex-col flex-1 justify-center items-start pt-[40px]">
+      <div className="w-[400px] h-[400px] flex-col flex-1 justify-center items-start pt-[10px]">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-5xl">{product.title}</h1>
-            <hr  className="w-5/6 mt-3 text-[0.2]"/>
+            <hr  className="w-5/6 mt-3 text-[0.2] bg-black"/>
             <p className="w-[80%] pt-[50px] text-xl tracking-wide">{product.description}</p>
             <div className="flex w-4/5 pt-3 text-2xl justify-between">
               <p>Adres:</p>
               <p>{product.adress}</p>
             </div>
-            <hr  className="w-5/6 mt-4 text-[0.2]"/>
+            <hr  className="w-5/6 mt-4 text-[0.2] bg-black"/>
         </div>
       <div className="flex justify-around items-center pt-[30px]">
         <div>
