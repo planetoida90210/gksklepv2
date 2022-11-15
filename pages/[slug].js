@@ -9,6 +9,7 @@ const ProductDetails = ({product}) => {
  const router = useRouter();
  const [index, setIndex] = useState(0);
 
+
   return (
     <div className="w-screen nav-h overflow-hidden bg-[#E7ECEE] dark:bg-[#0f0f12] pt-8 flex">
         <div className="flex gap-[40px] p-[40px] pt-[60px]">

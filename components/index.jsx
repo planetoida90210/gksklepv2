@@ -8,4 +8,5 @@ import CategoryTabs from "./CategoryTabs";
 import Product from "./Product";
 
 
+
 export { Header, HomePage, Button, ArtPage, SalePage, FreeGraffitiPage, CategoryTabs, Product }
