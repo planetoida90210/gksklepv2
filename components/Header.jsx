@@ -52,8 +52,6 @@ const checkActive = (active, setActive, router) => {
         case `${'/free-graffiti' || '/free-graffiti/#id'}`:
             if (active !== 'Free Graffiti') setActive('Free Graffiti');
             break;
-        // default:
-        //     setActive('');
     }
 }
 
