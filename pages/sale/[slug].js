@@ -141,6 +141,7 @@ export const getStaticPaths = async () => {
     return {
         props: {
             product,
+            fallback: 'blocking'
         }
     }
 }
