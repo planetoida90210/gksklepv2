@@ -93,6 +93,18 @@ const ProductDetails = ({product}) => {
 }
 
 // backend code
+
+export const getStaticProps = async ({ params: { slug }}) => {
+  const query = `*[_type == "art" && slug.current == '${slug}'][0]`;
+  const product = await sanityClient.fetch(query)
+
+  return {
+      props: {
+          product,
+      }
+  }
+}
+
 export const getStaticPaths = async () => {
     const products = await fetchArtProducts();
   
@@ -107,15 +119,5 @@ export const getStaticPaths = async () => {
     }
   };
 
-  export const getStaticProps = async ({ params: { slug }}) => {
-    const query = `*[_type == "art" && slug.current == '${slug}'][0]`;
-    const product = await sanityClient.fetch(query)
-
-    return {
-        props: {
-            product,
-        }
-    }
-}
 
 export default ProductDetails

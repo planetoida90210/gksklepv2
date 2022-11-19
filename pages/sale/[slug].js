@@ -121,6 +121,18 @@ const ProductDetails = ({product}) => {
 }
 
 // backend code
+export const getStaticProps = async ({ params: { slug }}) => {
+  const query = `*[_type == "sale" && slug.current == '${slug}'][0]`;
+  const product = await sanityClient.fetch(query)
+
+  return {
+      props: {
+          product,
+          fallback: true
+      }
+  }
+}
+
 export const getStaticPaths = async () => {
     const products = await fetchSaleProducts();
   
@@ -134,16 +146,5 @@ export const getStaticPaths = async () => {
     }
   };
 
-  export const getStaticProps = async ({ params: { slug }}) => {
-    const query = `*[_type == "sale" && slug.current == '${slug}'][0]`;
-    const product = await sanityClient.fetch(query)
-
-    return {
-        props: {
-            product,
-            fallback: true
-        }
-    }
-}
 
 export default ProductDetails
