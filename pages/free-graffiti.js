@@ -16,8 +16,8 @@ const Art = ({categories, products}) => {
       <FreeGraffitiPage />
     </main>
     <section id="graffiti" className="relative snap-center z-40 -mt-[100vh] min-h-screen dark:bg-[#24252D] bg-white">
-        <div className="space-y-10 py-16">
-          <h1 className="text-center text-4xl font-medium tracking-wide md:text-5xl">
+        <div className="space-y-10 py-10 xl:py-16">
+          <h1 className="text-center text-3xl xl:text-5xl font-medium tracking-wide">
             Free Graffiti
           </h1>
           <CategoryTabs categories={categories} products={products}/>
